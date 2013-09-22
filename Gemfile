@@ -37,7 +37,7 @@ group :test, :development do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda'
-
+  gem 'capybara'
 
   gem 'quiet_assets'
   gem 'pry-rails'
