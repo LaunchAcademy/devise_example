@@ -17,7 +17,7 @@ feature 'sign up' do
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Smith'
     fill_in 'Email', with: 'john@example.com'
-    fill_in 'Password', with: 'password'
+    fill_in 'user_password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
     click_button 'Sign Up'
     expect(page).to have_content("You're in")
