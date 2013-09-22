@@ -1,0 +1,30 @@
+require 'spec_helper'
+
+feature 'something' do
+
+end
+
+feature 'sign up' do
+  # Acceptance Criteria:
+  # * I must specify a valid email address, first name, and last name
+  # * I must specify a password, and confirm that password
+  # * If I do not perform the above, I get an error message
+  # * If I specify valid information, I register my account and am authenticated
+  scenario 'with valid information' do
+    visit root_path
+    click_link 'Sign Up'
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'First Name', with: 'John'
+    fill_in 'Last Name', with: 'Smith'
+    fill_in 'Email', with: 'john@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
+    click_button 'Sign Up'
+    expect(page).to have_content("You're in")
+    expect(page).to have_content('Sign Out')
+  end
+
+  scenario 'with missing information'
+  scenario 'with a conflicting password confirmation'
+
+end
